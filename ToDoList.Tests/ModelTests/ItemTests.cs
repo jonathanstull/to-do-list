@@ -8,7 +8,7 @@ namespace ToDoList.TestTools{
     [TestMethod]
     public void ItemConstructor_CreatesInstanceOfItem_Item()
     {
-      Item newItem = new Item();
+      Item newItem = new Item("test");
       Assert.AreEqual(typeof(Item), newItem.GetType());
     }
 
@@ -19,6 +19,9 @@ namespace ToDoList.TestTools{
       Item newItem = new Item(description);
       string result = newItem.Description;
       Assert.AreEqual(description, result);
+    }
+
+    
     }
   }
 }
