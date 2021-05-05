@@ -9,7 +9,7 @@ namespace ToDoList.TestTools{
   {
     public void Dispose()
     {
-      Item.ClearAll();
+      // Item.ClearAll();
     }
     
     [TestMethod]
@@ -48,6 +48,11 @@ namespace ToDoList.TestTools{
 
       List<Item> result = Item.GetAll();
 
+      foreach (Item thisItem in result)
+      {
+        Console.WriteLine("Output from empty list GetAll test: " + this.Item.Description);
+      }
+
       CollectionAssert.AreEqual(newList, result);
     }
 
@@ -61,6 +66,11 @@ namespace ToDoList.TestTools{
       List<Item> newList = new List<Item> { newItem1, newItem2 };
 
       List<Item> result = Item.GetAll();
+
+      foreach (Item thisItem in result)
+      {
+        Console.WriteLine("Output from second GetAll test: " + thisItem.Description);
+      }
 
       CollectionAssert.AreEqual(newList, result);
     }
