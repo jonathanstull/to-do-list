@@ -50,7 +50,7 @@ namespace ToDoList.TestTools{
 
       foreach (Item thisItem in result)
       {
-        Console.WriteLine("Output from empty list GetAll test: " + this.Item.Description);
+        Console.WriteLine("Output from empty list GetAll test: " + thisItem.Description);
       }
 
       CollectionAssert.AreEqual(newList, result);
