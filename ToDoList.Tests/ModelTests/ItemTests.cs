@@ -30,6 +30,8 @@ namespace ToDoList.TestTools{
       string updatedDescription = "Do the dishes.";
       newItem.Description = updatedDescription;
       string result = newItem.Description;
+
+      Assert.AreEqual(updatedDescription, result);
     }
   }
 }
