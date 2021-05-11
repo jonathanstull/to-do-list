@@ -1,9 +1,9 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
-using System;
 using ToDoList.Models;
+using System;
 
-namespace ToDoList.Test
+namespace ToDoList.Tests
 {
   [TestClass]
   public class ItemTests : IDisposable
@@ -13,7 +13,7 @@ namespace ToDoList.Test
     {
       Item.ClearAll();
     }
-    
+
     [TestMethod]
     public void ItemConstructor_CreatesInstanceOfItem_Item()
     {
@@ -24,30 +24,30 @@ namespace ToDoList.Test
     [TestMethod]
     public void GetDescription_ReturnsDescription_String()
     {
-      // Arrange
+      //Arrange
       string description = "Walk the dog.";
 
-      // Act
+      //Act
       Item newItem = new Item(description);
       string result = newItem.Description;
 
-      // Assert
+      //Assert
       Assert.AreEqual(description, result);
     }
 
     [TestMethod]
     public void SetDescription_SetDescription_String()
     {
-      // Arrange
+      //Arrange
       string description = "Walk the dog.";
       Item newItem = new Item(description);
 
-      // Act
-      string updatedDescription = "Do the dishes.";
+      //Act
+      string updatedDescription = "Do the dishes";
       newItem.Description = updatedDescription;
       string result = newItem.Description;
 
-      // Assert
+      //Assert
       Assert.AreEqual(updatedDescription, result);
     }
 
@@ -67,17 +67,17 @@ namespace ToDoList.Test
     [TestMethod]
     public void GetAll_ReturnsItems_ItemList()
     {
-      // Arrange
-      string description01 = "Walk the dog.";
-      string description02 = "Do the dishes.";
+      //Arrange
+      string description01 = "Walk the dog";
+      string description02 = "Wash the dishes";
       Item newItem1 = new Item(description01);
       Item newItem2 = new Item(description02);
       List<Item> newList = new List<Item> { newItem1, newItem2 };
 
-      // Act
+      //Act
       List<Item> result = Item.GetAll();
 
-      // Assert
+      //Assert
       CollectionAssert.AreEqual(newList, result);
     }
   }
